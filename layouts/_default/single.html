@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main>
+
+    {{ if .Params.toc }}
+        <aside id="toc">
+            {{ .TableOfContents }}
+        </aside>
+    {{ end }}
+
+    <article>
+        {{ .Content }}
+    </article>
+
+</main>
+{{end}}

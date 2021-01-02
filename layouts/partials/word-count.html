@@ -1,0 +1,14 @@
+<!-- Include word count if present. -->
+<!---->
+{{ if .WordCount }}
+<!-- View count -->
+<span id="views-box" class="invisible">
+  <span id="views">0</span> Views &middot;
+</span>
+<!-- Words -->
+{{ .WordCount }} Words {{ end }}
+<!-- ...and reading time.  -->
+{{ if .ReadingTime }} &middot;
+<!---->
+{{ .ReadingTime }} minute read. {{ end }}
+<!---->

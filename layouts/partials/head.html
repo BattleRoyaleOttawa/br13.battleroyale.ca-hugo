@@ -1,0 +1,56 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1,
+    shrink-to-fit=no"
+/>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Permanent+Marker&display=swap"
+          rel="stylesheet"
+        ></link>
+
+<!-- Inline Critical CSS -->
+{{ $pure := resources.Get "/lib/pure.css" }}
+{{ $grids := resources.Get "/lib/grids.css" }}
+{{ $bg := resources.Get "/backgrounds.css" }}
+{{ $style := resources.Get "/style.css" }}
+{{ $css := slice $pure $grids $bg $style | resources.Concat "main.css" | minify | fingerprint }}
+<style media="screen">{{ $css.Content | safeCSS }}</style>
+
+<!-- JS -->
+{{ $lazyload := resources.Get "/lib/lazysizes.min.js" }}
+{{ $global := resources.Get "/script.js" }}
+{{ $jsu := slice $lazyload $global | resources.Concat "js/bundle.js" }}
+{{ $js := $jsu | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="application/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" async defer></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  defer
+  type="application/javascript"
+  src="https://www.googletagmanager.com/gtag/js?id=UA-155827853-1"
+></script>
+<script type="application/javascript" async defer>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "UA-155827853-1");
+</script>
+
+<style media="print">
+  html {
+    color: black;
+    background: white;
+    font-size: 20px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", "Noto Mono",
+      Menlo, Courier, monospace;
+  }
+</style>
