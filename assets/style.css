@@ -33,9 +33,20 @@ a {
   font-family: "Archivo";
 }
 
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6,
+.content-head,
 .battlefield {
   font-family: "Bebas Neue";
   letter-spacing: 1px;
+}
+
+.content-head{
+  font-size: 2rem;
 }
 
 .marker {
@@ -145,9 +156,11 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: 0 0 8px #444;
 }
 
 #splash-title {
+  color: white;
   text-align: center;
   margin: 0 1rem;
   padding: 0;
@@ -184,6 +197,18 @@ img {
 .dark {
   background: #111;
   color: #EEE;
+}
+
+.orange{
+  background: rgb(255, 166, 0);
+}
+
+.green{
+  background: greenyellow;
+}
+
+.purple{
+  background: rgb(180, 67, 255);
 }
 
 /*
@@ -262,5 +287,5 @@ img {
   background: #111;
 }
 ::-webkit-scrollbar-thumb {
-  background: #eee;
+  background: orange;
 }
