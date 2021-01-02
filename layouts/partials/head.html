@@ -6,6 +6,7 @@
     shrink-to-fit=no"
 />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<title>Battle Royale 13</title>
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -28,22 +29,6 @@
 {{ $jsu := slice $lazyload $global | resources.Concat "js/bundle.js" }}
 {{ $js := $jsu | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="application/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" async defer></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script
-  async
-  defer
-  type="application/javascript"
-  src="https://www.googletagmanager.com/gtag/js?id=UA-155827853-1"
-></script>
-<script type="application/javascript" async defer>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "UA-155827853-1");
-</script>
 
 <style media="print">
   html {

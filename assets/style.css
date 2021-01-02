@@ -45,7 +45,7 @@ a {
 .rgb {
   color: purple;
   animation: colorful;
-  animation-duration: 30s;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
 }
 
